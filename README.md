@@ -7,4 +7,4 @@ Advent Of Code is a well-known project by Eric Wastl. Each day, a new door opens
 ## My Personal Solutions
 - This repo conains my personal soltuions. Feedback is welcome!
 - Done with C# and Visual Studio 2022.
-- See also my [GiHub profile](https://github.com/matthiasjost
+- See also my [GiHub profile](https://github.com/matthiasjost)
