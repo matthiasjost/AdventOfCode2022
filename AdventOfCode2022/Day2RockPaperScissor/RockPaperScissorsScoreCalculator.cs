@@ -22,12 +22,12 @@ namespace Day2RockPaperScissor
         }
         public RockPaperScissor Player1 { get; set; }
         public RockPaperScissor Player2 { get; set; }
-        public SituationScoreType SituationPlayer1Score { get; set; }
-        public SituationScoreType SituationPlayer2Score
+        public SituationScoreType SituationPlayer2Score { get; set; }
+        public SituationScoreType SituationPlayer1Score
         {
             get
             {
-                switch (SituationPlayer1Score)
+                switch (SituationPlayer2Score)
                 {
                     case SituationScoreType.Loss:
                         return SituationScoreType.Won;
@@ -65,19 +65,19 @@ namespace Day2RockPaperScissor
                 {
                     Player1 = RockPaperScissor.Rock,
                     Player2 = RockPaperScissor.Rock,
-                    SituationPlayer1Score = SituationScoreType.Draw
+                    SituationPlayer2Score = SituationScoreType.Draw
                 });
                 _possibleOutcomes.Add(new SituationOutcomeType()
                 {
                     Player1 = RockPaperScissor.Rock,
                     Player2 = RockPaperScissor.Paper,
-                    SituationPlayer1Score = SituationScoreType.Loss
+                    SituationPlayer2Score = SituationScoreType.Won
                 });
                 _possibleOutcomes.Add(new SituationOutcomeType()
                 {
                     Player1 = RockPaperScissor.Rock,
                     Player2 = RockPaperScissor.Scissor,
-                    SituationPlayer1Score = SituationScoreType.Won
+                    SituationPlayer2Score = SituationScoreType.Loss
                 });
 
 
@@ -85,19 +85,19 @@ namespace Day2RockPaperScissor
                 {
                     Player1 = RockPaperScissor.Paper,
                     Player2 = RockPaperScissor.Rock,
-                    SituationPlayer1Score = SituationScoreType.Won
+                    SituationPlayer2Score = SituationScoreType.Loss
                 });
                 _possibleOutcomes.Add(new SituationOutcomeType()
                 {
                     Player1 = RockPaperScissor.Paper,
                     Player2 = RockPaperScissor.Paper,
-                    SituationPlayer1Score = SituationScoreType.Draw
+                    SituationPlayer2Score = SituationScoreType.Draw
                 });
                 _possibleOutcomes.Add(new SituationOutcomeType()
                 {
                     Player1 = RockPaperScissor.Paper,
                     Player2 = RockPaperScissor.Scissor,
-                    SituationPlayer1Score = SituationScoreType.Loss
+                    SituationPlayer2Score = SituationScoreType.Won
                 });
 
 
@@ -105,19 +105,19 @@ namespace Day2RockPaperScissor
                 {
                     Player1 = RockPaperScissor.Scissor,
                     Player2 = RockPaperScissor.Rock,
-                    SituationPlayer1Score = SituationScoreType.Loss
+                    SituationPlayer2Score = SituationScoreType.Won
                 });
                 _possibleOutcomes.Add(new SituationOutcomeType()
                 {
                     Player1 = RockPaperScissor.Scissor,
                     Player2 = RockPaperScissor.Paper,
-                    SituationPlayer1Score = SituationScoreType.Won
+                    SituationPlayer2Score = SituationScoreType.Loss
                 });
                 _possibleOutcomes.Add(new SituationOutcomeType()
                 {
                     Player1 = RockPaperScissor.Scissor,
                     Player2 = RockPaperScissor.Scissor,
-                    SituationPlayer1Score = SituationScoreType.Draw
+                    SituationPlayer2Score = SituationScoreType.Draw
                 });
             }
 
@@ -128,7 +128,7 @@ namespace Day2RockPaperScissor
                     var outcome = _possibleOutcomes
                         .First(s => s.Player1 == roundItem.Player1 && s.Player2 == roundItem.Player2);
 
-                    roundItem.ScorePlayer1 = (int)(outcome.SituationPlayer1Score + (int)roundItem.Player1);
+                    roundItem.ScorePlayer1 = (int)(outcome.SituationPlayer2Score + (int)roundItem.Player2);
                 }
 
                 return _roundList.Sum(r => r.ScorePlayer1);
