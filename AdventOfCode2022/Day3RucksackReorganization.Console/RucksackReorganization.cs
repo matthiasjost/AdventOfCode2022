@@ -17,7 +17,7 @@ namespace Day3RucksackReorganization.Console
                 return Content.Distinct().ToArray();
             }
         }
-        public Rucksack(string allContents)
+        public void StoreContents(string allContents)
         {
             string first = allContents.Substring(0, allContents.Length / 2);
             string second = allContents.Substring(allContents.Length / 2, allContents.Length / 2);
@@ -27,7 +27,7 @@ namespace Day3RucksackReorganization.Console
 
         public RucksackCompartment FirstCompartment { get; set; }
         public RucksackCompartment SecondCompartment { get; set; }
-        public char[] WrongSortedTypes { get; set; }
+        public char[] WrongSortedTypes { get; set; } = new char[] {};
 
         public void FindWrongSortedTypes()
         {
@@ -48,11 +48,12 @@ namespace Day3RucksackReorganization.Console
     }
 
     public class RucksackReorganization
-    { 
+    {
         public List<Rucksack> RucksackList { get; set; } = new();
         public char[] AddRucksackAndGetWrongSortedType(string content)
         {
-            Rucksack rucksack = new(content);
+            Rucksack rucksack = new();
+            rucksack.StoreContents(content);
             rucksack.FindWrongSortedTypes();
             RucksackList.Add(rucksack);
             return rucksack.WrongSortedTypes;
