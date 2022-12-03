@@ -1,6 +1,4 @@
-﻿using Day2RockPaperScissor;
-
-namespace Day2RockPaperScissor
+﻿namespace Day2RockPaperScissors.Console
 {
     internal class Program
     {
@@ -14,10 +12,10 @@ namespace Day2RockPaperScissor
             foreach (string line in text)
             {
                 string[] columns = line.Split(' ');
-                calculator.AddRound(columns[1], columns[0]);
+                calculator.AddRound(columns[0], columns[1]);
             }
 
-            Console.WriteLine(calculator.CalculateRounds());
+            System.Console.WriteLine(calculator.CalculateRounds());
         }
     }
 }

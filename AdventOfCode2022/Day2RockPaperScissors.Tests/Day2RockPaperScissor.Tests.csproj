@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Day2RockPaperScissor\Day2RockPaperScissor.csproj" />
+    <ProjectReference Include="..\Day2RockPaperScissors.Console\Day2RockPaperScissors.Console.csproj" />
   </ItemGroup>
 
 </Project>
