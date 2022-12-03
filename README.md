@@ -4,3 +4,6 @@ Advent Of Code is a well-known project by Eric Wastl. Each day, a new door opens
 
 https://adventofcode.com
 
+## My Personal Solutions
+This repo conains my personal soltuions. Feedback is welcome!
+
