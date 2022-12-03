@@ -6,9 +6,6 @@
         {
             // Read entire text file content in one string  
             //string[] text = File.ReadAllLines("input.txt");
-
-
-
         }
     }
 }

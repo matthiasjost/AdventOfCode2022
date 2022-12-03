@@ -9,10 +9,8 @@ namespace Day3RucksackReorganization.Tests
         public void RucksackReorganizationTest1()
         {
             RucksackReorganization rucksackReorganization = new();
-
-
-
-            rucksackReorganization.AddRucksack("vJrwpWtwJgWrhcsFMMfFFhFp");
+            char[] wrongSortedTypes = rucksackReorganization.AddRucksackAndGetWrongSortedType("vJrwpWtwJgWrhcsFMMfFFhFp");
+            Assert.AreEqual('p', wrongSortedTypes[0]);
         }
     }
 }
