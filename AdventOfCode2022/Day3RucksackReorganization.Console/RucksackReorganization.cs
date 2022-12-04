@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
@@ -11,8 +12,9 @@ namespace Day3RucksackReorganization.Console
     {
         private RucksackCompartment FirstCompartment { get; set; } = null;
         private RucksackCompartment SecondCompartment { get; set; } = null;
-        private char[] WrongSortedItems { get; set; } = new char[] { };
-        private int WrongSortedScore { get; set; }
+
+        public char[] WrongSorted { get; set; }
+        public int WrongScore { get; set; }
 
         public void StoreInCompartment(string allContents)
         {
@@ -23,7 +25,7 @@ namespace Day3RucksackReorganization.Console
             SecondCompartment = new() { Content = second.ToCharArray() };
         }
 
-        public char[] FindWrongStored()
+        public void FindWrongStored()
         {
             char[] firstTypes = FirstCompartment.GetDistinctItemTypes();
             char[] secondTypes = SecondCompartment.GetDistinctItemTypes();
@@ -32,30 +34,37 @@ namespace Day3RucksackReorganization.Console
             Array.Copy(firstTypes, combinedArray, firstTypes.Length);
             Array.Copy(secondTypes, 0, combinedArray, firstTypes.Length, secondTypes.Length);
 
-            char[] duplicates = combinedArray.GroupBy(x => x)
+            WrongSorted = combinedArray.GroupBy(x => x)
                 .Where(g => g.Count() > 1)
                 .Select(y => y.Key)
                 .ToArray();
-
-            WrongSortedItems = duplicates;
-            return WrongSortedItems;
         }
 
+        /*
+        Lowercase item types a through z have priorities 1 through 26.
+        Uppercase item types A through Z have priorities 27 through 52.
+        */
         public int CalculateWrongSortedPriority()
         {
-            foreach (char typeItem in WrongSortedItems)
-            {
+            int calculatedValue = 0;
 
+            foreach (char typeItem in WrongSorted)
+            {
                 int typeValue = (int)typeItem;
 
-                if (typeValue >= 97)
+                if (typeValue >= (int)('A') && typeValue <= (int)('Z'))
                 {
-                    typeValue = typeValue - 97 + 26;
+                    calculatedValue = typeValue - 65 + 27;
+                }
+                else if  (typeValue >= (int)('a') && typeValue <= (int)('z'))
+                {
+                    calculatedValue = typeValue - 96;
                 }
 
-                WrongSortedScore += typeValue;
+                WrongScore += calculatedValue;
             }
-            return WrongSortedScore;
+
+            return WrongScore;
         }
     }
 }
