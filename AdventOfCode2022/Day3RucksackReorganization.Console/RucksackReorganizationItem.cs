@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Day3RucksackReorganization.Console
 {
-    public class RucksackReorganization
+    public class RucksackReorganizationItem
     {
-        private RucksackCompartment FirstCompartment { get; set; } = null;
-        private RucksackCompartment SecondCompartment { get; set; } = null;
+        private RucksackCompartment FirstCompartment { get; set; }
+        private RucksackCompartment SecondCompartment { get; set; }
 
         public char[] WrongSorted { get; set; }
         public int WrongScore { get; set; }

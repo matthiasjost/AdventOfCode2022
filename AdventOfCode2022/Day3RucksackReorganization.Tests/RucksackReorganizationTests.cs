@@ -10,32 +10,32 @@ namespace Day3RucksackReorganization.Tests
         {
             int totalScore = 0;
             
-            RucksackReorganization rucksack1 = new RucksackReorganization();
+            RucksackReorganizationItem rucksack1 = new RucksackReorganizationItem();
             rucksack1.StoreInCompartment("vJrwpWtwJgWrhcsFMMfFFhFp");
             rucksack1.FindWrongStored();
             int score1 = rucksack1.CalculateWrongSortedPriority();
 
-            RucksackReorganization rucksack2 = new RucksackReorganization();
+            RucksackReorganizationItem rucksack2 = new RucksackReorganizationItem();
             rucksack2.StoreInCompartment("jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL");
             rucksack2.FindWrongStored();
             int score2 = rucksack2.CalculateWrongSortedPriority();
 
-            RucksackReorganization rucksack3 = new RucksackReorganization();
+            RucksackReorganizationItem rucksack3 = new RucksackReorganizationItem();
             rucksack3.StoreInCompartment("PmmdzqPrVvPwwTWBwg");
             rucksack3.FindWrongStored();
             int score3 = rucksack3.CalculateWrongSortedPriority();
 
-            RucksackReorganization rucksack4 = new RucksackReorganization();
+            RucksackReorganizationItem rucksack4 = new RucksackReorganizationItem();
             rucksack4.StoreInCompartment("wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn");
             rucksack4.FindWrongStored();
             int score4 = rucksack4.CalculateWrongSortedPriority();
 
-            RucksackReorganization rucksack5= new RucksackReorganization();
+            RucksackReorganizationItem rucksack5= new RucksackReorganizationItem();
             rucksack5.StoreInCompartment("ttgJtRGJQctTZtZT");
             rucksack5.FindWrongStored();
             int score5 = rucksack5.CalculateWrongSortedPriority();
 
-            RucksackReorganization rucksack6 = new RucksackReorganization();
+            RucksackReorganizationItem rucksack6 = new RucksackReorganizationItem();
             rucksack6.StoreInCompartment("CrZsJsPPZsGzwwsLwLmpwMDw");
             rucksack6.FindWrongStored();
             int score6 = rucksack6.CalculateWrongSortedPriority();
@@ -46,7 +46,7 @@ namespace Day3RucksackReorganization.Tests
         [TestMethod]
         public void RucksackReorganizationTest3CalculateScoreA()
         {
-            RucksackReorganization rucksack = new RucksackReorganization();
+            RucksackReorganizationItem rucksack = new RucksackReorganizationItem();
             rucksack.StoreInCompartment("AA");
 
             rucksack.FindWrongStored();
@@ -58,7 +58,7 @@ namespace Day3RucksackReorganization.Tests
         [TestMethod]
         public void RucksackReorganizationTest3CalculateScoreZ()
         {
-            RucksackReorganization rucksack = new RucksackReorganization();
+            RucksackReorganizationItem rucksack = new RucksackReorganizationItem();
             rucksack.StoreInCompartment("ZZ");
 
             rucksack.FindWrongStored();
@@ -70,7 +70,7 @@ namespace Day3RucksackReorganization.Tests
         [TestMethod]
         public void RucksackReorganizationTest3CalculateScoreA2()
         {
-            RucksackReorganization rucksack = new RucksackReorganization();
+            RucksackReorganizationItem rucksack = new RucksackReorganizationItem();
             rucksack.StoreInCompartment("aa");
 
             rucksack.FindWrongStored();
@@ -82,7 +82,7 @@ namespace Day3RucksackReorganization.Tests
         [TestMethod]
         public void RucksackReorganizationTest3CalculateScoreZ2()
         {
-            RucksackReorganization rucksack = new RucksackReorganization();
+            RucksackReorganizationItem rucksack = new RucksackReorganizationItem();
             rucksack.StoreInCompartment("zz");
 
             rucksack.FindWrongStored();
