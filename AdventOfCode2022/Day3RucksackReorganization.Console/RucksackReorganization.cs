@@ -7,29 +7,23 @@ using System.Threading.Tasks;
 
 namespace Day3RucksackReorganization.Console
 {
-    public class Rucksack
+    public class RucksackReorganization
     {
-        public class RucksackCompartment
-        {
-            public char[] Content { get; set; }
-            public char[] GetDistinctItemTypes()
-            {
-                return Content.Distinct().ToArray();
-            }
-        }
-        public void StoreContents(string allContents)
+        private RucksackCompartment FirstCompartment { get; set; } = null;
+        private RucksackCompartment SecondCompartment { get; set; } = null;
+        private char[] WrongSortedItems { get; set; } = new char[] { };
+        private int WrongSortedScore { get; set; }
+
+        public void StoreInCompartment(string allContents)
         {
             string first = allContents.Substring(0, allContents.Length / 2);
             string second = allContents.Substring(allContents.Length / 2, allContents.Length / 2);
+
             FirstCompartment = new() { Content = first.ToCharArray() };
             SecondCompartment = new() { Content = second.ToCharArray() };
         }
 
-        public RucksackCompartment FirstCompartment { get; set; }
-        public RucksackCompartment SecondCompartment { get; set; }
-        public char[] WrongSortedTypes { get; set; } = new char[] {};
-
-        public void FindWrongSortedTypes()
+        public char[] FindWrongStored()
         {
             char[] firstTypes = FirstCompartment.GetDistinctItemTypes();
             char[] secondTypes = SecondCompartment.GetDistinctItemTypes();
@@ -43,20 +37,25 @@ namespace Day3RucksackReorganization.Console
                 .Select(y => y.Key)
                 .ToArray();
 
-            WrongSortedTypes = duplicates;
+            WrongSortedItems = duplicates;
+            return WrongSortedItems;
         }
-    }
 
-    public class RucksackReorganization
-    {
-        public List<Rucksack> RucksackList { get; set; } = new();
-        public char[] AddRucksackAndGetWrongSortedType(string content)
+        public int CalculateWrongSortedPriority()
         {
-            Rucksack rucksack = new();
-            rucksack.StoreContents(content);
-            rucksack.FindWrongSortedTypes();
-            RucksackList.Add(rucksack);
-            return rucksack.WrongSortedTypes;
+            foreach (char typeItem in WrongSortedItems)
+            {
+
+                int typeValue = (int)typeItem;
+
+                if (typeValue >= 97)
+                {
+                    typeValue = typeValue - 97 + 26;
+                }
+
+                WrongSortedScore += typeValue;
+            }
+            return WrongSortedScore;
         }
     }
 }
