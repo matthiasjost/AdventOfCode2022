@@ -31,6 +31,4 @@ namespace Day2RockPaperScissor.Tests
             Assert.AreEqual(6, calculator.CalculateRounds());
         }
     }
-
-
 }
