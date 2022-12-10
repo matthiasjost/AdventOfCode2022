@@ -6,7 +6,7 @@ namespace Day3RucksackReorganizationPart2.Tests
     public class RucksackReorganizationPart2Tests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestIfScoreCalculatedCorrectly()
         {
             int totalScore = 0;
 

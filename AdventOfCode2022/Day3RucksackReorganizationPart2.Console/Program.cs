@@ -10,9 +10,12 @@
 
             RucksackReorganizationList rucksackList = new RucksackReorganizationList();
 
-            foreach (string line in text)
+            for (int i = 0; i < text.Length; i++)
             {
-                rucksackList.AddRucksack("","", "");
+                if( i %3 == 0 && i != 0)
+                {
+                    rucksackList.AddRucksack(text[i-2], text[i-1], text[i]);
+                }
             }
 
             foreach (RucksackReorganizationItem rucksackItem in rucksackList.RucksackList)

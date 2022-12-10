@@ -11,7 +11,6 @@ namespace Day3RucksackReorganizationPart2.Console
         public List<RucksackReorganizationItem> RucksackList { get; set; } = new List<RucksackReorganizationItem>();
         public RucksackReorganizationList()
         {
-            
         }
         public void AddRucksack(string firstContents, string secondContents, string thirdContents)
         {

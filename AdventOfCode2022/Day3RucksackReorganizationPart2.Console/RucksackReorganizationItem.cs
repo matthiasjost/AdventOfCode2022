@@ -12,9 +12,7 @@ namespace Day3RucksackReorganizationPart2.Console
     {
         private RucksackCompartment FirstRucksack{ get; set; }
         private RucksackCompartment SecondRucksack { get; set; }
-
         private RucksackCompartment ThirdRucksack { get; set; }
-
 
         public char[] WrongSorted { get; set; }
         public int WrongScore { get; set; }
@@ -37,15 +35,7 @@ namespace Day3RucksackReorganizationPart2.Console
             char[] secondTypes = SecondRucksack.GetDistinctItemTypes();
             char[] thirdTypes = ThirdRucksack.GetDistinctItemTypes();
 
-            char[] combinedArray = new char[firstTypes.Length + secondTypes.Length + thirdTypes.Length];
-            Array.Copy(firstTypes, combinedArray, firstTypes.Length);
-            Array.Copy(secondTypes, 0, combinedArray, firstTypes.Length, secondTypes.Length);
-            Array.Copy(thirdTypes, 0, combinedArray, firstTypes.Length + secondTypes.Length, thirdTypes.Length);
-
-            WrongSorted = combinedArray.GroupBy(x => x)
-                .Where(g => g.Count() > 1)
-                .Select(y => y.Key)
-                .ToArray();
+            WrongSorted = firstTypes.Intersect(secondTypes).Intersect(thirdTypes).ToArray();
         }
 
         /*
