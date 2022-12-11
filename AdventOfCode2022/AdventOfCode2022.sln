@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3RucksackReorganization.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3RucksackReorganization.Tests", "Day3RucksackReorganization.Tests\Day3RucksackReorganization.Tests.csproj", "{E77D8618-9B3E-443E-ACD7-B48403B7BCF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3RucksackReorganizationPart2.Console", "Day3RucksackReorganizationPart2.Console\Day3RucksackReorganizationPart2.Console.csproj", "{F5CA42B4-ACAF-4193-85EC-EAB5E4F8027B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3RucksackReorganizationPart2.Console", "Day3RucksackReorganizationPart2.Console\Day3RucksackReorganizationPart2.Console.csproj", "{F5CA42B4-ACAF-4193-85EC-EAB5E4F8027B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3RucksackReorganizationPart2.Tests", "Day3RucksackReorganizationPart2.Tests\Day3RucksackReorganizationPart2.Tests.csproj", "{AC503F32-8576-4D54-AAFB-6F5697F25EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3RucksackReorganizationPart2.Tests", "Day3RucksackReorganizationPart2.Tests\Day3RucksackReorganizationPart2.Tests.csproj", "{AC503F32-8576-4D54-AAFB-6F5697F25EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4CampCleanup.Console", "Day4CampCleanup.Console\Day4CampCleanup.Console.csproj", "{381BB1B6-83E7-4229-AC7A-27252494AE01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4CampCleanup.Tests", "Day4CampCleanup.Tests\Day4CampCleanup.Tests.csproj", "{12CD47AC-857F-4811-B9B6-340C5BCF7F78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{AC503F32-8576-4D54-AAFB-6F5697F25EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC503F32-8576-4D54-AAFB-6F5697F25EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC503F32-8576-4D54-AAFB-6F5697F25EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381BB1B6-83E7-4229-AC7A-27252494AE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381BB1B6-83E7-4229-AC7A-27252494AE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381BB1B6-83E7-4229-AC7A-27252494AE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381BB1B6-83E7-4229-AC7A-27252494AE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CD47AC-857F-4811-B9B6-340C5BCF7F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CD47AC-857F-4811-B9B6-340C5BCF7F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CD47AC-857F-4811-B9B6-340C5BCF7F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CD47AC-857F-4811-B9B6-340C5BCF7F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
