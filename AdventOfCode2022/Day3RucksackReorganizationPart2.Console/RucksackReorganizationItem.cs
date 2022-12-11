@@ -14,7 +14,7 @@ namespace Day3RucksackReorganizationPart2.Console
         private RucksackCompartment SecondRucksack { get; set; }
         private RucksackCompartment ThirdRucksack { get; set; }
 
-        public char[] WrongSorted { get; set; }
+        public char WrongSorted { get; set; }
         public int WrongScore { get; set; }
 
         public void StoreInThreeRucksacks(string firstContents, string secondContents, string thirdContents)
@@ -31,11 +31,8 @@ namespace Day3RucksackReorganizationPart2.Console
 
         public void FindWrongStored()
         {
-            char[] firstTypes = FirstRucksack.GetDistinctItemTypes();
-            char[] secondTypes = SecondRucksack.GetDistinctItemTypes();
-            char[] thirdTypes = ThirdRucksack.GetDistinctItemTypes();
-
-            WrongSorted = firstTypes.Intersect(secondTypes).Intersect(thirdTypes).ToArray();
+            WrongSorted = FirstRucksack.Content.Intersect(SecondRucksack.Content).Intersect(ThirdRucksack.Content)
+                .FirstOrDefault();
         }
 
         /*
@@ -45,22 +42,21 @@ namespace Day3RucksackReorganizationPart2.Console
         public int CalculateWrongSortedPriority()
         {
             int calculatedValue = 0;
+            WrongScore = 0;
 
-            foreach (char typeItem in WrongSorted)
+            int typeValue = (int)WrongSorted;
+
+            if (typeValue >= (int)('A') && typeValue <= (int)('Z'))
             {
-                int typeValue = (int)typeItem;
-
-                if (typeValue >= (int)('A') && typeValue <= (int)('Z'))
-                {
-                    calculatedValue = typeValue - 65 + 27;
-                }
-                else if  (typeValue >= (int)('a') && typeValue <= (int)('z'))
-                {
-                    calculatedValue = typeValue - 96;
-                }
-
-                WrongScore += calculatedValue;
+                calculatedValue = typeValue - 65 + 27;
             }
+            else if (typeValue >= (int)('a') && typeValue <= (int)('z'))
+            {
+                calculatedValue = typeValue - 96;
+            }
+
+            WrongScore += calculatedValue;
+        
 
             return WrongScore;
         }

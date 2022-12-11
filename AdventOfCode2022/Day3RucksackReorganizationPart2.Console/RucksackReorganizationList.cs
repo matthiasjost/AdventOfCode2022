@@ -16,6 +16,7 @@ namespace Day3RucksackReorganizationPart2.Console
         {
             RucksackReorganizationItem rucksack = new RucksackReorganizationItem();
             rucksack.StoreInThreeRucksacks(firstContents, secondContents, thirdContents);
+            rucksack.FindWrongStored();
             RucksackList.Add(rucksack);
         }
     }
