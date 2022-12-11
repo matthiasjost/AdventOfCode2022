@@ -12,9 +12,9 @@
 
             for (int i = 0; i < text.Length; i++)
             {
-                if( i %3 == 0 && i != 0)
+                if( i %3 == 2)
                 {
-                    rucksackList.AddRucksack(text[i-2], text[i-1], text[i]);
+                    rucksackList.AddRucksack(text[i], text[i-1], text[i-2]);
                 }
             }
 
