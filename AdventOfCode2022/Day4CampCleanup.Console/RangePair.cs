@@ -17,7 +17,7 @@ namespace Day4CampCleanup.Console
             {
                 return true;
             }
-            return true;
+            return false;
         }
         public bool CheckIfRightContainsLeft()
         {
