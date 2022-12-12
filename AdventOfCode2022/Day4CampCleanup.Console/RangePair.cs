@@ -13,6 +13,10 @@ namespace Day4CampCleanup.Console
 
         public bool CheckIfOneContainsTheOther()
         {
+            if (CheckIfRightContainsLeft() || CheckIfLeftContainsRight())
+            {
+                return true;
+            }
             return true;
         }
         public bool CheckIfRightContainsLeft()
@@ -23,10 +27,7 @@ namespace Day4CampCleanup.Console
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
         public bool CheckIfLeftContainsRight()
         {
@@ -36,10 +37,7 @@ namespace Day4CampCleanup.Console
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
 }
