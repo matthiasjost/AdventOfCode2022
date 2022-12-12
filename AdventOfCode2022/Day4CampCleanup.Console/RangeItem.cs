@@ -8,7 +8,10 @@ namespace Day4CampCleanup.Console
 {
     public class RangeItem
     {
-        public int From { get; set; }
-        public int To { get; set; }
+        public IEnumerable<int> Range { get; set; }
+        public void SetRange(int from, int to)
+        {
+            Range = Enumerable.Range(from, to - from + 1);
+        }
     }
 }

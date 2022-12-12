@@ -10,11 +10,8 @@ namespace Day4CampCleanup.Tests
         {
             RangePair rangePair = new RangePair();
 
-            rangePair.Left.From = 2;
-            rangePair.Left.To = 8;
-
-            rangePair.Right.From = 3;
-            rangePair.Right.To = 7;
+            rangePair.Left.SetRange(2, 8);
+            rangePair.Right.SetRange(3, 7);
 
             bool flag = rangePair.CheckIfLeftContainsRight();
 
@@ -26,11 +23,8 @@ namespace Day4CampCleanup.Tests
         {
             RangePair rangePair = new RangePair();
 
-            rangePair.Left.From = 2;
-            rangePair.Left.To = 8;
-
-            rangePair.Right.From = 3;
-            rangePair.Right.To = 10;
+            rangePair.Left.SetRange(2, 8);
+            rangePair.Right.SetRange(3, 10);
 
             bool flag = rangePair.CheckIfLeftContainsRight();
 

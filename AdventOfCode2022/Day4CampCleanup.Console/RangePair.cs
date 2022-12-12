@@ -23,11 +23,9 @@ namespace Day4CampCleanup.Console
         }
         public bool CheckIfLeftContainsRight()
         {
-            IEnumerable<int> firstRange = Enumerable.Range(Left.From, Left.To-Left.From+1);
-            IEnumerable<int> secondRange = Enumerable.Range(Right.From, Right.To-Right.From+1);
-            IEnumerable<int> intersection = firstRange.Intersect(secondRange);
+            IEnumerable<int> intersection = Left.Range.Intersect(Right.Range);
 
-            if (intersection.Count() == secondRange.Count())
+            if (intersection.Count() == Right.Range.Count())
             {
                 return true;
             }
