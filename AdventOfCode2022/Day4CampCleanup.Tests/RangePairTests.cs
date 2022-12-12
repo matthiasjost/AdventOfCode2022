@@ -29,6 +29,32 @@ namespace Day4CampCleanup.Tests
             bool flag = rangePair.CheckIfLeftContainsRight();
 
             Assert.IsFalse(flag);
+        }
+
+        [TestMethod]
+        public void CheckIfRightContainsLeftTrue()
+        {
+            RangePair rangePair = new RangePair();
+
+            rangePair.Left.SetRange(3, 7);
+            rangePair.Right.SetRange(2, 8);
+
+            bool flag = rangePair.CheckIfRightContainsLeft();
+
+            Assert.IsTrue(flag);
+
+        }
+        [TestMethod]
+        public void CheckIfRightContainsLeftFalse()
+        {
+            RangePair rangePair = new RangePair();
+
+            rangePair.Left.SetRange(3, 10);
+            rangePair.Right.SetRange(2, 8);
+
+            bool flag = rangePair.CheckIfRightContainsLeft();
+
+            Assert.IsFalse(flag);
 
         }
     }

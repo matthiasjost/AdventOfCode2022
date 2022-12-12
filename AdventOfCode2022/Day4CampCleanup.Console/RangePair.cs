@@ -17,9 +17,16 @@ namespace Day4CampCleanup.Console
         }
         public bool CheckIfRightContainsLeft()
         {
+            IEnumerable<int> intersection = Right.Range.Intersect(Left.Range);
 
-
-            return true;
+            if (intersection.Count() == Left.Range.Count())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public bool CheckIfLeftContainsRight()
         {
@@ -33,7 +40,6 @@ namespace Day4CampCleanup.Console
             {
                 return false;
             }
-        
         }
     }
 }
